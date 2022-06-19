@@ -32,10 +32,11 @@
                                 <textarea id="description" rows="3" name="description" class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
                             </div>
                         </div>
+                        <div class="mt-6 p-4 bg-green-600">
+                            <button type="submit" class="px-4 py-2 bg-red-500 hover:bg-black hover:text-white rounded">Cadastrar</button>
+                        </div>
                     </form>
-                    <div class="mt-6 p-4 bg-green-600">
-                        <button type="submit" class="px-4 py-2 bg-red-500 hover:bg-black hover:text-white rounded">Cadastrar</button>
-                    </div>
+
                 </div>
 
             </div>
