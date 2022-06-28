@@ -47,7 +47,7 @@ class TableController extends Controller
             'location' => $request->location,
         ]);
 
-        return to_route('admin.tables.index')->with('success', 'Table created successfully.');
+        return to_route('admin.tables.index')->with('success', 'Mesa criada com sucesso.');
     }
 
     /**
