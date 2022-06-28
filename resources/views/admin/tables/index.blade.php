@@ -15,16 +15,16 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                Nome
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Color
+                                Convidados
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Category
+                                Disponibilidade
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Price
+                                Localização
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 <span class="sr-only">Edit</span>
@@ -32,57 +32,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($tables as $table)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Apple MacBook Pro 17"
+                                {{ $table->name }}
                             </th>
                             <td class="px-6 py-4">
-                                Sliver
+                                {{ $table->guest_number }}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop
+                                {{ $table->status->name }}
                             </td>
                             <td class="px-6 py-4">
-                                $2999
+                                {{ $table->location->name }}
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <div class="flex space-x-2">
+                                    <a class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-black" href="{{ route('admin.tables.edit', $table->id) }}">Editar</a>
+                                    <form class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-black" method="POST" action="{{ route('admin.tables.destroy', $table->id) }}" onsubmit="return confirm('Você tem certeza?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Deletar</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Microsoft Surface Pro
-                            </th>
-                            <td class="px-6 py-4">
-                                White
-                            </td>
-                            <td class="px-6 py-4">
-                                Laptop PC
-                            </td>
-                            <td class="px-6 py-4">
-                                $1999
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Magic Mouse 2
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <td class="px-6 py-4">
-                                $99
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
