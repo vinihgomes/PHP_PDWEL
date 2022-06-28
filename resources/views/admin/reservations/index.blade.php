@@ -23,9 +23,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Data
                             </th>
-                            <!--                             <th scope="col" class="px-6 py-3">
-                                Table
-                            </th> -->
+                            <th scope="col" class="px-6 py-3">
+                                Mesa
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Convidados
                             </th>
@@ -46,9 +46,9 @@
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                 {{ $reservation->res_date }}
                             </td>
-                            <!--  <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                {{ $reservation->table }}
-                            </td> -->
+                            <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                {{ $reservation->tables_id }}
+                            </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                 {{ $reservation->guest_number }}
                             </td>
